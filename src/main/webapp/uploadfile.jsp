@@ -10,6 +10,7 @@
 <head>
     <title>上传文件</title>
 </head>
+
 <body>
 <form action="upload.java" method="post" enctype="multipart/form-data">
     <input name="name">
