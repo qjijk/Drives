@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisGeneratorConfiguration">
+    <option name="credentials">
+      <map>
+        <entry key="jdbc:mysql://localhost:3306">
+          <value>
+            <Credential>
+              <option name="username" value="root" />
+            </Credential>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableConfigs">
+      <map>
+        <entry key="user">
+          <value>
+            <TableConfig>
+              <option name="annotation" value="true" />
+              <option name="basePackage" value="qgw" />
+              <option name="comment" value="true" />
+              <option name="domainName" value="User" />
+              <option name="domainPackage" value="qgw.domain" />
+              <option name="exampleName" value="UserExample" />
+              <option name="examplePackage" value="qgw.example" />
+              <option name="examplePostfix" value="Example" />
+              <option name="mapperName" value="UserMapper" />
+              <option name="mapperPackage" value="qgw.mapper" />
+              <option name="mapperPostfix" value="Mapper" />
+              <option name="moduleRootPath" value="$PROJECT_DIR$" />
+              <option name="name" value="user" />
+              <option name="needForUpdate" value="true" />
+              <option name="primaryKey" value="id" />
+              <option name="resourcePath" value="src/main/resources" />
+              <option name="sourcePath" value="src/main/java" />
+              <option name="tableName" value="user" />
+              <option name="useExample" value="true" />
+              <option name="xmlPackage" value="mapper" />
+            </TableConfig>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
