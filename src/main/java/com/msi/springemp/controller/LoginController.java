@@ -72,10 +72,10 @@ public class LoginController {
 //		}
 //	}
 	
-	@RequestMapping("personal")
+	@RequestMapping("main")
 	public ModelAndView index(String username,String password) throws Exception{
 		if(userService.login(username, password)) {
-			ModelAndView mv = new ModelAndView("personal");
+			ModelAndView mv = new ModelAndView("main");
 			return mv;
 		}else{
 			ModelAndView mv = new ModelAndView("login");

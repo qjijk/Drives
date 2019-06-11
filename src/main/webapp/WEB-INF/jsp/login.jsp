@@ -30,7 +30,7 @@
 			  </div>
 			<div id="content">
 				<p id="whereami"></p>
-				<form action="personal.do" method="post" id="logform" class="col-sm-offset-4 col-sm-8 form-horizontal" role="form">
+				<form action="main.do" method="post" id="logform" class="col-sm-offset-4 col-sm-8 form-horizontal" role="form">
 					<fieldset>
 						<div class="row">
 							<div class="col-sm-6">

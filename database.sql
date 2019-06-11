@@ -6,3 +6,6 @@ CREATE TABLE `user` (
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+
+
