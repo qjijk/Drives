@@ -19,8 +19,8 @@
     <tr ><td colspan="2"><h3>文件管理</h3></td></tr>
     <tr><td width="10%" valign="top">
         <table width="100%">
-            <tr><td><a href="" name="a" target="">文件上传</a></td></tr>
-            <tr><td><a href="" name="b">文件管理</a></td></tr>
+            <tr><td><a href="upload.do" name="a" target="">文件上传</a></td></tr>
+            <tr><td><a href="download.do" name="b">文件管理</a></td></tr>
             <tr><td> <a href="" name="c">目录管理</a></td></tr>
             <tr><td>用户管理</td></tr>
         </table>

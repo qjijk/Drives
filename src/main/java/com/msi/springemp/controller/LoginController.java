@@ -37,6 +37,17 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("login");
 		return mv;
 	}
+	@RequestMapping("upload")
+	public ModelAndView upload(){
+		ModelAndView mv = new ModelAndView("upload");
+		return mv;
+	}
+	@RequestMapping("download")
+	public ModelAndView download(){
+		ModelAndView mv = new ModelAndView("download");
+		return mv;
+	}
+
 	
 
 	@RequestMapping("register")
