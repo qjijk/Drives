@@ -7,7 +7,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-
+drop table if exists `file`;
 create table file
 (
     id       int auto_increment
@@ -17,7 +17,7 @@ create table file
     timename int         not null,
     constraint FK_userid
         foreign key (uid) references user (userid)
-);
+)ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 
 

@@ -33,8 +33,12 @@ public class LoginController {
 	private UserDAO userDAO;
 	
 	@RequestMapping("login")
-	public ModelAndView login(){
+	public ModelAndView login(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView("login");
+		if ((request.getSession().getAttribute("name")) != null)
+        {
+            mv = new ModelAndView("main");
+        }
 		return mv;
 	}
 	@RequestMapping("upload")
@@ -68,30 +72,24 @@ public class LoginController {
 		if (isResponseCorrect) {
 			userDAO.addUser(user);
 			customGenericManageableCaptchaService.removeCaptcha(request.getSession().getId());
-			ModelAndView mv = new ModelAndView("personal");
+			ModelAndView mv = new ModelAndView("main");
 			return mv;
 		} else {
 			ModelAndView mv = new ModelAndView("register");
 			return mv;
 		}
 	}
-	
-//	@RequestMapping("main")
-//	public ModelAndView main(String username,String password){
-//		if(userService.login(username, password)) {
-//			ModelAndView mv = new ModelAndView("emplist","emps",empDAO.getEmps());
-//			return mv;
-//		}else{
-//			ModelAndView mv = new ModelAndView("login");
-//			mv.addObject("msg", "用户名或者密码错误");
-//			return mv;
-//		}
-//	}
-	
+
 	@RequestMapping("main")
-	public ModelAndView index(String username,String password) throws Exception{
+	public ModelAndView index(HttpServletRequest request,String username,String password) throws Exception{
+
 		if(userService.login(username, password)) {
 			ModelAndView mv = new ModelAndView("main");
+			request.getSession().setAttribute("name", username);
+			if(request.getSession().getAttribute("name") == null)
+            {
+                mv = new ModelAndView("login");
+            }
 			return mv;
 		}else{
 			ModelAndView mv = new ModelAndView("login");
