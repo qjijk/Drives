@@ -16,7 +16,7 @@
     <p style="text-indent:0em;margin-top:20px;font-size:16px">
         <a href="register.do">注册</a> <br/>
         <a href="login.do">登录</a><br/>
-        <a href="">管理员登录</a>
+        <a href="admin.do">管理员登录</a>
     </p>
     <br />
 </div>

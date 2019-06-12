@@ -25,6 +25,7 @@ public class Updownload {
     public String upload(MultipartFile file,HttpServletRequest request) throws IOException{
         String path = request.getSession().getServletContext().getRealPath("upload");
         String fileName = file.getOriginalFilename();
+        System.out.println(path);
         File dir = new File(path,fileName);
         if(!dir.exists()){
             dir.mkdirs();
@@ -37,18 +38,12 @@ public class Updownload {
     @RequestMapping("/down")
     public void down(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
-        String fileName = request.getSession().getServletContext().getRealPath("upload")+"/101.jpg";
-
+        String fileName = request.getSession().getServletContext().getRealPath("upload")+"/44444.sketch";
         InputStream bis = new BufferedInputStream(new FileInputStream(new File(fileName)));
-
         String filename = "下载文件.jpg";
-
         filename = URLEncoder.encode(filename,"UTF-8");
-
         response.addHeader("Content-Disposition", "attachment;filename=" + filename);
-
         response.setContentType("multipart/form-data");
-
         BufferedOutputStream out = new BufferedOutputStream(response.getOutputStream());
         int len = 0;
         while((len = bis.read()) != -1){

@@ -47,6 +47,11 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("download");
 		return mv;
 	}
+	@RequestMapping("admin")
+	public ModelAndView admin(){
+		ModelAndView mv = new ModelAndView("admin");
+		return mv;
+	}
 
 	
 
