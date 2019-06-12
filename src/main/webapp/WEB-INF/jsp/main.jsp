@@ -10,18 +10,20 @@
 <head>
     <title>主页</title>
     <script type="text/css">
-
+    .h1{background-color: #66afe9;text-align: center;
+    }
+.h2{font-size: 30px;padding: 2px;color: orange}
     </script>
 </head>
 <body>
 
-<table border="1" width="100%"  >
+<table border="1" width="100%"  class="h1">
     <tr ><td colspan="2"><h3>文件管理</h3></td></tr>
     <tr><td width="10%" valign="top">
-        <table width="100%">
-            <tr><td><a href="upload.do" name="a" target="">文件上传</a></td></tr>
-            <tr><td><a href="download.do" name="b">文件管理</a></td></tr>
-            <tr><td> <a href="" name="c">目录管理</a></td></tr>
+        <table width="100%" class="h2">
+            <tr><td><a href="upload.do" name="a" target="ifeame">文件上传</a></td></tr>
+            <tr><td><a href="download.do" name="b" target="iframe">文件下载</a></td></tr>
+            <tr><td> <a href="" name="c" target="iframe">目录管理</a></td></tr>
             <tr><td>用户管理</td></tr>
         </table>
     </td>
