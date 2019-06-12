@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.URLEncoder;
 
@@ -36,7 +37,8 @@ public class Updownload {
     }
 
     @RequestMapping("/down")
-    public void down(HttpServletRequest request,HttpServletResponse response) throws Exception{
+    public void down(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception{
+        String useranme=(String) session.getAttribute("username");
 
         String fileName = request.getSession().getServletContext().getRealPath("upload")+"/44444.sketch";
         InputStream bis = new BufferedInputStream(new FileInputStream(new File(fileName)));
@@ -46,9 +48,13 @@ public class Updownload {
         response.setContentType("multipart/form-data");
         BufferedOutputStream out = new BufferedOutputStream(response.getOutputStream());
         int len = 0;
-        while((len = bis.read()) != -1){
+        if((len = bis.read()) != -1){
             out.write(len);
             out.flush();
+            response.sendRedirect("success");
+        }
+        else{
+            response.sendRedirect("fail");
         }
         out.close();
     }
