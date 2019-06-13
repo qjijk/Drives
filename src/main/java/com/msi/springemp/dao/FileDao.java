@@ -2,11 +2,13 @@ package com.msi.springemp.dao;
 
 import com.msi.springemp.pojo.File;
 
+import java.util.List;
+
 public interface FileDao {
 
-    public File findByuser(String usernames) throws Exception;
+    public List<File> findByuser(String usernames) throws Exception;
 
-    public File getAllFile() throws Exception;
+    public List<File> getAllFile() throws Exception;
 
     public void addFile(File file) throws Exception;
 

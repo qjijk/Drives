@@ -3,6 +3,8 @@ package com.msi.springemp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.msi.springemp.dao.FileDao;
+import com.msi.springemp.pojo.File;
 import com.msi.springemp.service.IUserService;
 import com.octo.captcha.service.image.ImageCaptchaService;
 import com.msi.springemp.service.impl.CustomGenericManageableCaptchaService;
@@ -15,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.msi.springemp.dao.UserDAO;
 import com.msi.springemp.pojo.User;
+
+import java.util.List;
 
 @Controller
 @SessionAttributes("username")
@@ -31,6 +35,9 @@ public class LoginController {
 	
 	@Autowired
 	private UserDAO userDAO;
+
+    @Autowired
+	private FileDao fileDao;
 	
 	@RequestMapping("login")
 	public ModelAndView login(HttpServletRequest request){
@@ -56,6 +63,18 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("admin");
 		return mv;
 	}
+    @RequestMapping("list")
+    public ModelAndView list(HttpServletRequest request) throws Exception {
+        List<File> ff;
+        ModelAndView mv = new ModelAndView("list");
+        Object o = request.getSession().getAttribute("name");
+        ff =  fileDao.findByuser(o.toString());
+        System.out.println(ff.size());
+        System.out.println(o);
+        request.getSession().setAttribute("list",ff);
+
+        return mv;
+    }
 
 	
 

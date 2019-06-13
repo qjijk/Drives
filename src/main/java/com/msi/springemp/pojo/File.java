@@ -4,10 +4,15 @@ public class File {
     private Integer id;
     private String usernames;
     private String realname;
-    private long timename;
+    private Long timename;
 
-    public File(String usernames, String realname, long timename)
-    {
+    public File(String usernames, String realname, Long timename) {
+        this.realname = realname;
+        this.usernames = usernames;
+        this.timename = timename;
+    }
+    public File(Integer id, String usernames, String realname, Long timename) {
+        this.id = id;
         this.realname = realname;
         this.usernames = usernames;
         this.timename = timename;
@@ -34,7 +39,7 @@ public class File {
     public long getTimename() {
         return timename;
     }
-    public void setTimename(Integer timename) {
+    public void setTimename(Long timename) {
         this.timename = timename;
     }
 }

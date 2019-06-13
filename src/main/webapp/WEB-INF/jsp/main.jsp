@@ -28,7 +28,7 @@
         </table>
     </td>
         <td width="70%">
-            <iframe name="myframe" src="${pageContext.request.contextPath}/list" width="100%" height="500"></iframe>
+            <iframe name="myframe" src="list.do" width="100%" height="500"></iframe>
         </td>
     </tr>
 </table>
