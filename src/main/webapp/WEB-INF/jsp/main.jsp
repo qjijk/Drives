@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<table border="1" width="100%"  class="h1">
+<table border="1" width="100%"  class="h1" >
     <tr ><td colspan="2"><h3>文件管理</h3></td></tr>
     <tr><td width="10%" valign="top">
         <table width="100%" class="h2">
