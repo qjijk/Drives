@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.msi.springemp.pojo.File" %><%--
   Created by IntelliJ IDEA.
@@ -19,7 +20,12 @@
     request.setAttribute("ff", ff);
 %>
 <c:forEach items="${requestScope.ff}" var="list" varStatus="id">
-    ${list.realname}<br>
+    ${list.realname}
+    <jsp:useBean id="dateValue" class="java.util.Date"/>
+    <jsp:setProperty name="dateValue" property="time" value="${list.timename}"/>
+    <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
+    <br>
+
 </c:forEach>
 
 
