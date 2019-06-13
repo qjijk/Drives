@@ -15,7 +15,7 @@
 
     <!-- 查找用户，通过id、email、userName、phone -->
     <select id="findByName" resultType="User" parameterType="java.lang.String">
-        SELECT email,username,password FROM USER WHERE username = #{username}
+        SELECT email,username,password FROM user WHERE username = #{username}
     </select>
 
     <!-- 新增用户 -->

@@ -31,11 +31,11 @@ public class Updownload {
 
         String path = request.getSession().getServletContext().getRealPath("upload");
         String fileName = file.getOriginalFilename();
+        //fileName = URLEncoder.encode(fileName,"UTF-8");
         long a = Calendar.getInstance().getTimeInMillis();
         System.out.println(a);
         com.msi.springemp.pojo.File files = new com.msi.springemp.pojo.File(request.getSession().getAttribute("name").toString(),fileName,a) ;
         fileDao.addFile(files);
-
         System.out.println(path);
         File dir = new File(path,fileName);
         if(!dir.exists()){
@@ -48,6 +48,7 @@ public class Updownload {
 
     @RequestMapping("/down")
     public void down(HttpServletRequest request,HttpServletResponse response) throws Exception{
+
 
         String fileName = request.getSession().getServletContext().getRealPath("upload")+"/44444.sketch";
         InputStream bis = new BufferedInputStream(new FileInputStream(new File(fileName)));
