@@ -9,6 +9,10 @@
 <html>
 <head>
     <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/file.css" />
+    <script src="js/jquery.form.js" type="text/javascript"></script>
+    <script src="js/filemanage.js" type="text/javascript"></script>
 </head>
 <body>
 <form action="${pageContext.request.contextPath }/file/down.chao"

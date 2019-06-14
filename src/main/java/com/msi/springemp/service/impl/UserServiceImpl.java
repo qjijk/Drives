@@ -24,6 +24,16 @@ public class UserServiceImpl implements IUserService {
         }
         return false;
     }
+    public boolean a(String username, String password) throws Exception {
+        User user = userDAO.findByName(username);
+        if(user == null) {
+            return false;
+        }
+        if(password.equals(user.getPassword())){
+            return true;
+        }
+        return false;
+    }
 
     public int checkEmailExist(String email) throws Exception {
         int count = userDAO.findByEmail(email);

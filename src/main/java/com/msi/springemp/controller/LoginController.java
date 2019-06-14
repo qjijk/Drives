@@ -59,10 +59,23 @@ public class LoginController {
 		return mv;
 	}
 	@RequestMapping("admin")
-	public ModelAndView admin(){
-		ModelAndView mv = new ModelAndView("admin");
-		return mv;
+	public ModelAndView admin(HttpServletRequest request,String username,String password) throws Exception{
+
+		if(userService.a(username, password)) {
+			ModelAndView mv = new ModelAndView("admin");
+			request.getSession().setAttribute("name", username);
+			//if(request.getSession().getAttribute("name") == null)
+			{
+				mv = new ModelAndView("adminmanage");
+			}
+			return mv;
+		}else{
+			ModelAndView mv = new ModelAndView("admin");
+			mv.addObject("msg", "用户名或者密码错误");
+			return mv;
+		}
 	}
+
     @RequestMapping("list")
     public ModelAndView list(HttpServletRequest request) throws Exception {
         List<File> ff;
