@@ -13,6 +13,11 @@
 <html>
 <head>
     <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/file.css" />
+    <script src="js/jquery.form.js" type="text/javascript"></script>
+    <script src="js/filemanage.js" type="text/javascript"></script>
+
 </head>
 <body>
 <%
@@ -20,19 +25,13 @@
     request.setAttribute("ff", ff);
 %>
 <c:forEach items="${requestScope.ff}" var="list" varStatus="id">
-    <table bgcolor="aqua" border="5" width="70%">
-        <tr>
-            <td>
-    ${list.realname}
+<form class="form-bg1">
+        ${list.realname}
     <jsp:useBean id="dateValue" class="java.util.Date"/>
     <jsp:setProperty name="dateValue" property="time" value="${list.timename}"/>
     <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
-            </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="下载" onclick=""></td>
-            </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="删除" onclick=""></td>
-            </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="重命名" onclick=""></td>
-        </tr>
-
-    </table>
+    <a><input class="form-horizontal.btn" type="button"value="删除文件"></a>
+    </form>
 </c:forEach>
 
 

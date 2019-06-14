@@ -10,6 +10,7 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             </div>
             <div id="content">
                 <p id="whereami"></p>
-                <form action="adminmanage.do" method="post" id="logform" class="col-sm-offset-4 col-sm-8 form-horizontal" role="form">
+                <form action="admin.do" method="post" id="logform" class="col-sm-offset-4 col-sm-8 form-horizontal" role="form">
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-6">

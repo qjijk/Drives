@@ -9,16 +9,15 @@
 <html>
 <head>
     <title>主页</title>
-    <script type="text/css">
-    .h1{background-color: #66afe9;text-align: center;
-    }
-.h2{font-size: 30px;padding: 2px;color: orange}
-    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/file.css" />
+    <script src="js/jquery.form.js" type="text/javascript"></script>
+    <script src="js/filemanage.js" type="text/javascript"></script>
 </head>
 <body>
 
-<table border="1" width="100%"  class="h1" >
-    <tr ><td colspan="2"><h3>文件管理</h3></td></tr>
+<table border="1" width="100%"  class="form-bg" >
+    <tr class="form-horizontal"><td colspan="2"><h3>文件管理</h3></td></tr>
     <tr><td width="10%" valign="top">
         <table width="100%" class="h2">
             <tr><td><a href="upload.do" name="a" target="ifeame">文件上传</a></td></tr>
