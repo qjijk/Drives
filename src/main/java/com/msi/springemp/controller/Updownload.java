@@ -37,7 +37,7 @@ public class Updownload {
         com.msi.springemp.pojo.File files = new com.msi.springemp.pojo.File(request.getSession().getAttribute("name").toString(),fileName,a) ;
         fileDao.addFile(files);
         System.out.println(path);
-        File dir = new File(path,fileName);
+        File dir = new File(path, String.valueOf(a)+fileName);
         if(!dir.exists()){
             dir.mkdirs();
         }
@@ -47,20 +47,20 @@ public class Updownload {
     }
 
     @RequestMapping("/down")
-    public void down(HttpServletRequest request,HttpServletResponse response) throws Exception{
+    public void down(HttpServletRequest request,HttpServletResponse response, String timename) throws Exception{
 
-
-        String fileName = request.getSession().getServletContext().getRealPath("upload")+"/44444.sketch";
+        com.msi.springemp.pojo.File ff = fileDao.findBytimename(timename);
+        String filename = ff.getRealname();
+        String fileName = request.getSession().getServletContext().getRealPath("upload")+"/"+timename+filename;
         InputStream bis = new BufferedInputStream(new FileInputStream(new File(fileName)));
-        String filename = "下载文件.jpg";
         filename = URLEncoder.encode(filename,"UTF-8");
         response.addHeader("Content-Disposition", "attachment;filename=" + filename);
         response.setContentType("multipart/form-data");
         BufferedOutputStream out = new BufferedOutputStream(response.getOutputStream());
+        byte buffer[] = new byte[1024];
         int len = 0;
-        while((len = bis.read()) != -1){
-            out.write(len);
-            out.flush();
+        while((len = bis.read(buffer)) != -1){
+            out.write(buffer, 0, len);
         }
         out.close();
     }

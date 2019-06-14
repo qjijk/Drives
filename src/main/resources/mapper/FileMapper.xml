@@ -7,6 +7,9 @@
     <select id="getAllFile" resultType="com.msi.springemp.pojo.File">
         select * from file;
     </select>
+    <select id="findBytimename" resultType="File" parameterType="java.lang.String">
+        select * from file where timename = #{timename};
+    </select>
     <insert id="addFile" parameterType="com.msi.springemp.pojo.File">
         insert into file
         (usernames, realname, timename)

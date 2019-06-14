@@ -10,6 +10,8 @@ public interface FileDao {
 
     public List<File> getAllFile() throws Exception;
 
+    public File findBytimename(String timename) throws Exception;
+
     public void addFile(File file) throws Exception;
 
 }
