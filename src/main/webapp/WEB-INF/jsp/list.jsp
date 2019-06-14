@@ -30,7 +30,8 @@
     <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
             </td> <td bgcolor="#ff8c00" width="20px"><a href="/file/down?timename=${list.timename}">下载</a></td>
             </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="删除" href=""></td>
-            </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="重命名" href=""></td>
+            </td> <td bgcolor="#ff8c00" width="20px"><input  type="button" value="重命名" href="">
+        </td>
         </tr>
 
     </table>
