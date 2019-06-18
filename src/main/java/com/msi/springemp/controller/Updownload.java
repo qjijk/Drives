@@ -45,7 +45,16 @@ public class Updownload {
         file.transferTo(dir);
         return fileName;
     }
-
+    @RequestMapping("/delete")
+    public void delete(MultipartFile file,HttpServletRequest request)throws Exception{
+        String path = request.getSession().getServletContext().getRealPath("upload");
+        String fileName = file.getOriginalFilename();
+        long a = Calendar.getInstance().getTimeInMillis();
+        System.out.println(a);
+        com.msi.springemp.pojo.File files = new com.msi.springemp.pojo.File(request.getSession().getAttribute("name").toString(),fileName,a) ;
+       File file2=new File(path+"\\"+"name");
+       file2.delete();
+    }
     @RequestMapping("/down")
     public void down(HttpServletRequest request,HttpServletResponse response, String timename) throws Exception{
 

@@ -181,8 +181,23 @@ function deleteUserFile(userId, fileId) {
                          }
                 });
      }
+function movefile(){
 
-
+}
+function rebuild(){
+    var str=prompt("请输入文件夹名","新建文件夹");
+    if(prompt==true){
+        var new_folder;
+        var fldr;
+        new_folder = new ActiveXObject("Scripting.FileSystemObject");
+        fldr = new_folder.GetFolder("h://");
+        new_folder.CreateFolder ("h://ceshi");
+       // var uname = new_folder.GetBaseName("h://ceshi");
+    }
+    else {
+        return 0;
+    }
+}
  $(function () {
 
 

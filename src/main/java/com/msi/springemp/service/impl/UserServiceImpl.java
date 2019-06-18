@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.msi.springemp.pojo.User;
 
+import java.io.File;
+
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -29,6 +31,7 @@ public class UserServiceImpl implements IUserService {
         if(user == null) {
             return false;
         }
+
         if(password.equals(user.getPassword())){
             return true;
         }

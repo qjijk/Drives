@@ -23,6 +23,7 @@
             <tr><td><a href="upload.do" name="a" target="ifeame">文件上传</a></td></tr>
             <tr><td><a href="download.do" name="b" target="iframe">文件下载</a></td></tr>
             <tr><td> <a href="list.do" name="c" target="iframe">目录管理</a></td></tr>
+            <tr><td> <input type="button" value="新建文件夹" onclick="rebuild()"></td></tr>
         </table>
     </td>
         <td width="70%">

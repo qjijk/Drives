@@ -6,6 +6,7 @@ public class File {
     private String realname;
     private Long timename;
 
+
     public File(String usernames, String realname, Long timename) {
         this.realname = realname;
         this.usernames = usernames;
@@ -17,6 +18,7 @@ public class File {
         this.usernames = usernames;
         this.timename = timename;
     }
+
 
     public Integer getId() {
         return id;
@@ -42,5 +44,6 @@ public class File {
     public void setTimename(Long timename) {
         this.timename = timename;
     }
+
 }
 
