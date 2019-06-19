@@ -35,7 +35,7 @@
     <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
             </td> <td class="form-bg2"  width="20px"><a  href="${pageContext.request.contextPath }/file/down?timename=${list.timename}">下载</a></td>
             </td> <td class="form-bg2" width="20px"><a  href="${pageContext.request.contextPath }/file/delete?timename=${list.timename}">删除</a></td>
-            </td> <td  class="form-bg2" width="20px"><input type="button" value="重命名"></a>
+            </td> <td  class="form-bg2" width="20px"><input type="button" value="重命名" onclick="rename()"></a>
         </td> <td  class="form-bg2" width="20px"><a href="share.do?timname=${list.timename}">分享</a>
         </td>
         </tr>

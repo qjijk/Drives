@@ -182,8 +182,8 @@ function deleteUserFile(userId, fileId) {
                 });
      }
 
-function rebuild(){
-    var str=prompt("请输入文件夹名","新建文件夹");
+function rename(){
+    var str=prompt("请输入文件名","重命名");
     if(prompt==true){
         var new_folder;
         var fldr;
