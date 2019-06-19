@@ -12,6 +12,11 @@ body {
     background-image: url("/images/b.jpg");
     background-size: cover;
 }
+.form-bg3{
+    background-image: url("/images/1.jpg");
+    background-size: cover;
+
+}
 .form-horizontal{
     background: #fff;
     padding-bottom: 40px;

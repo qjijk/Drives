@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-<table class="form-bg1">
+<table class="form-bg3" width="100%">
     <thead >管理员界面</thead>
     <tr ><td><input width="20px" class="h2" type="button" value="管理用户信息" onclick="a1()"></td></tr>
     <tr ><td><input class="h2" type="button" value="管理文件" onclick="a2()"></td></tr>
