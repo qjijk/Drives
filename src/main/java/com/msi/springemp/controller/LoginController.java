@@ -58,22 +58,17 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("download");
 		return mv;
 	}
+
+    @RequestMapping("share")
+    public ModelAndView share(){
+        ModelAndView mv = new ModelAndView("share");
+        return mv;
+    }
+
 	@RequestMapping("admin")
 	public ModelAndView admin(HttpServletRequest request,String username,String password) throws Exception{
-
-		if(userService.a(username, password)) {
 			ModelAndView mv = new ModelAndView("admin");
-			request.getSession().setAttribute("name", username);
-			//if(request.getSession().getAttribute("name") == null)
-			{
-				mv = new ModelAndView("adminmanage");
-			}
 			return mv;
-		}else{
-			ModelAndView mv = new ModelAndView("admin");
-			mv.addObject("msg", "用户名或者密码错误");
-			return mv;
-		}
 	}
 
     @RequestMapping("list")
@@ -85,7 +80,6 @@ public class LoginController {
         System.out.println(ff.size());
         System.out.println(o);
         request.getSession().setAttribute("list",ff);
-
         return mv;
     }
 
@@ -96,6 +90,12 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("register");
 		return mv;
 	}
+
+    @RequestMapping("anminmanage")
+    public ModelAndView adminmanage(){
+        ModelAndView mv = new ModelAndView("anminmanage");
+        return mv;
+    }
 	
 	@RequestMapping("userAdd")
 	public ModelAndView doAdd(User user, String captcha, HttpServletRequest request) throws Exception {
@@ -112,23 +112,36 @@ public class LoginController {
 		}
 	}
 
-	@RequestMapping("main")
+	@RequestMapping("anminmain")
 	public ModelAndView index(HttpServletRequest request,String username,String password) throws Exception{
 
-		if(userService.login(username, password)) {
-			ModelAndView mv = new ModelAndView("main");
-			request.getSession().setAttribute("name", username);
-			if(request.getSession().getAttribute("name") == null)
-            {
-                mv = new ModelAndView("login");
-            }
+		if(username.equals("root") && password.equals("rootroot")) {
+			ModelAndView mv = new ModelAndView("anminmanage");
 			return mv;
 		}else{
-			ModelAndView mv = new ModelAndView("login");
+			ModelAndView mv = new ModelAndView("admin");
 			mv.addObject("msg", "用户名或者密码错误");
 			return mv;
 		}
 	}
+
+    @RequestMapping("main")
+    public ModelAndView adminindex(HttpServletRequest request,String username,String password) throws Exception{
+
+        if(userService.login(username, password)) {
+            ModelAndView mv = new ModelAndView("main");
+            request.getSession().setAttribute("name", username);
+            if(request.getSession().getAttribute("name") == null)
+            {
+                mv = new ModelAndView("login");
+            }
+            return mv;
+        }else{
+            ModelAndView mv = new ModelAndView("login");
+            mv.addObject("msg", "用户名或者密码错误");
+            return mv;
+        }
+    }
 	
 	@RequestMapping("/checkEmail")
 	public @ResponseBody int checkEmail(String email) throws Exception {

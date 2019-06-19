@@ -16,8 +16,12 @@
         values
         (#{usernames} ,#{realname} ,#{timename} )
     </insert>
-<delete id="deletefile" parameterType="string">
-    delete * from file where timename= #{timename};
+<delete id="deleteFile" parameterType="string">
+    delete from file where timename= #{timename};
 </delete>
+    <update id="updateFile" parameterType="string">
+        update file set realname = #{realname} where timename = #{timename}
+    </update>
+
 
 </mapper>

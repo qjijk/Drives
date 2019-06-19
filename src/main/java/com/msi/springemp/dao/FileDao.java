@@ -12,6 +12,10 @@ public interface FileDao {
 
     public File findBytimename(String timename) throws Exception;
 
+    public void deleteFile(String timename) throws Exception;
+
+    public void updateFile(String realname, String timname) throws Exception;
+
     public void addFile(File file) throws Exception;
 
 

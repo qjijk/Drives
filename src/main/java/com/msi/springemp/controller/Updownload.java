@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import java.io.*;
 import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -26,8 +28,6 @@ public class Updownload {
     @RequestMapping(value="/upload",method=RequestMethod.POST)
     @ResponseBody
     public String upload(MultipartFile file,HttpServletRequest request) throws Exception {
-
-
 
         String path = request.getSession().getServletContext().getRealPath("upload");
         String fileName = file.getOriginalFilename();
@@ -45,16 +45,23 @@ public class Updownload {
         file.transferTo(dir);
         return fileName;
     }
+
+
+
     @RequestMapping("/delete")
-    public void delete(MultipartFile file,HttpServletRequest request)throws Exception{
-        String path = request.getSession().getServletContext().getRealPath("upload");
-        String fileName = file.getOriginalFilename();
-        long a = Calendar.getInstance().getTimeInMillis();
-        System.out.println(a);
-        com.msi.springemp.pojo.File files = new com.msi.springemp.pojo.File(request.getSession().getAttribute("name").toString(),fileName,a) ;
-       File file2=new File(path+"\\"+"name");
-       file2.delete();
+    public ModelAndView delete(HttpServletRequest request, String timename)throws Exception{
+
+        fileDao.deleteFile(timename);
+        List<com.msi.springemp.pojo.File> ff;
+        ModelAndView mv = new ModelAndView("list");
+        Object o = request.getSession().getAttribute("name");
+        ff =  fileDao.findByuser(o.toString());
+        System.out.println(ff.size());
+        System.out.println(o);
+        request.getSession().setAttribute("list",ff);
+        return mv;
     }
+
     @RequestMapping("/down")
     public void down(HttpServletRequest request,HttpServletResponse response, String timename) throws Exception{
 

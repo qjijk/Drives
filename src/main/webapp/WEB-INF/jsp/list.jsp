@@ -33,10 +33,10 @@
     <jsp:useBean id="dateValue" class="java.util.Date"/>
     <jsp:setProperty name="dateValue" property="time" value="${list.timename}"/>
     <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
-            </td> <td class="form-bg2"  width="20px"><a  href="/file/down?timename=${list.timename}">下载</a></td>
-            </td> <td class="form-bg2" width="20px"><input  type="button" value="删除" href=""></td>
+            </td> <td class="form-bg2"  width="20px"><a  href="${pageContext.request.contextPath }/file/down?timename=${list.timename}">下载</a></td>
+            </td> <td class="form-bg2" width="20px"><a  href="${pageContext.request.contextPath }/file/delete?timename=${list.timename}">删除</a></td>
             </td> <td  class="form-bg2" width="20px"><input type="button" value="重命名"></a>
-        </td> <td  class="form-bg2" width="20px"><input type="button" value="移动" onclick="movefile()"></a>
+        </td> <td  class="form-bg2" width="20px"><a href="share.do?timname=${list.timename}">分享</a>
         </td>
         </tr>
 
