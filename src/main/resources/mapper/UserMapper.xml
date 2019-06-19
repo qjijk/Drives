@@ -25,7 +25,9 @@
         VALUES
         (#{email},#{username},#{password})
     </insert>
-
+    <select id="findAllUser" resultType="com.msi.springemp.pojo.User">
+        select * from user;
+    </select>
 
 
     <!--<select id="getAllUser" resultType="User" >

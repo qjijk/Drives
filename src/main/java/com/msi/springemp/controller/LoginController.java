@@ -83,6 +83,18 @@ public class LoginController {
         return mv;
     }
 
+    @RequestMapping("userlist")
+    public ModelAndView userlist(HttpServletRequest request) throws Exception {
+        List<User> ff;
+        ModelAndView mv = new ModelAndView("userlist");
+        Object o = request.getSession().getAttribute("name");
+        ff =  userDAO.findAllUser();
+        System.out.println(ff.size());
+        System.out.println(o);
+        request.getSession().setAttribute("userlist",ff);
+        return mv;
+    }
+
 	
 
 	@RequestMapping("register")
@@ -142,6 +154,8 @@ public class LoginController {
             return mv;
         }
     }
+
+
 	
 	@RequestMapping("/checkEmail")
 	public @ResponseBody int checkEmail(String email) throws Exception {

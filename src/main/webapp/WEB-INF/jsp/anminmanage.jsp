@@ -8,7 +8,7 @@
     <script src="js/filemanage.js" type="text/javascript"></script>
     <script type="text/javascript">
         function a1() {
-            window.open("")
+            window.open("userlist.do")
         }
         function a2() {
             window.open("")

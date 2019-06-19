@@ -20,15 +20,15 @@
     <tr class="form-horizontal"><td colspan="2"><h3>文件管理</h3></td></tr>
     <tr><td width="10%" valign="top">
         <table width="100%" class="h2">
-            <tr><td><a href="upload.do" name="a" target="ifeame">文件上传</a></td></tr>
-            <tr><td><a href="download.do" name="b" target="iframe">文件下载</a></td></tr>
-            <tr><td> <a href="list.do" name="c" target="iframe">目录管理</a></td></tr>
-            <tr><td> <input type="button" value="新建文件夹" onclick="rebuild()"></td></tr>
+            <tr><td><a href="upload.do" name="a" target="myfeame">文件上传</a></td></tr>
+            <tr><td><a href="list.do" name="c" target="myframe">目录管理</a></td></tr>
+            <tr><td><input type="button" value="新建文件夹" onclick="rebuild()"></td></tr>
         </table>
     </td>
         <td width="70%">
             <iframe name="myframe" src="list.do" width="100%" height="500"></iframe>
         </td>
+
     </tr>
 </table>
 </body>
